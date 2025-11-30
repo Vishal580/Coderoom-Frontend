@@ -1,0 +1,225 @@
+.colorful-text {
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+/* full-height container background */
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.home-container {
+    background: #000000;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* form card tweaks */
+.form-card {
+    max-width: 600px;
+    /* background: #000000; */
+    border: 1px solid #5ddfe64a;
+    box-shadow: 0 6px 30px rgba(5, 188, 255, 0.458);
+    border-radius: 8px;
+    margin-left: 70px;
+}
+
+.form-card .form-control {
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 16px;
+    margin: 8px 0;
+    max-width: 350px;
+    align-items: center;
+}
+
+.form-card .form-control:hover {
+    border-color: #5de0e6;
+    box-shadow: 0 0 30px rgba(5, 188, 255, 0.678);
+}
+
+.card-body {
+    padding: 30px;
+    background-color: #000000;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #5de0e6;
+    padding: 4px 20px;
+    margin: auto;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #ff6f61;
+    padding: 4px 20px;
+    margin: auto;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    color: #ff6f61;
+}
+
+.btn-primary:hover {
+    border-color: #5de0e6;
+    box-shadow: 0 0 12px rgba(5, 188, 255, 0.771);
+}
+
+.p-2.d-flex.align-items-center .btn-primary {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* Right column */
+.banner-column {
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    margin: 0;
+    position: relative;
+    right: 0;
+    overflow: hidden;
+}
+
+/* Banner image styling */
+.banner-img {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 6px 30px rgba(5, 188, 255, 0.458);
+}
+
+
+.btn-secondary:hover {
+    border-color: #ff6f61;
+    box-shadow: 0 0 12px rgba(255, 111, 97, 0.771);
+}
+
+.side-panel {
+ position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+
+    background-color: #121212;
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+/* language select: shrink-to-fit but keep min width and proper arrow */
+.lang-select {
+    display: inline-block;
+    width: auto !important;
+    min-width: 110px;
+    max-width: 220px;
+    padding: 4px 26px 4px 10px;
+    border: 1px solid #5de0e6;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #2e88db;
+    font-weight: 500;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #5de0e6 50%),
+        linear-gradient(135deg, #5de0e6 50%, transparent 50%);
+    background-position: calc(100% - 12px) calc(1.1em), calc(100% - 7px) calc(1.1em);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* keep options readable */
+.lang-select option {
+    color: #ffffff;
+    background: #000;
+}
+
+/* hover/focus */
+.lang-select:hover,
+.lang-select:focus {
+    box-shadow: 0 0 8px rgba(5, 188, 255, 0.4);
+    outline: none;
+}
+
+/* Compiler panel styling */
+.compiler-panel {
+  background-color: #121212;
+  border-top: 1px solid #5de0e6;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Drag handle at top */
+.compiler-drag-handle {
+  height: 6px;
+  cursor: ns-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.drag-indicator {
+  width: 40px;
+  height: 3px;
+  background: #5de0e6;
+  border-radius: 2px;
+}
+
+/* Compiler output scrollable area */
+.compiler-output {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #0a0a0a;
+}
+
+.compiler-output pre {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* make mobile view show only the form (banner hidden) */
+@media (max-width: 767.98px) {
+    .banner-column {
+        display: none !important;
+    }
+}
+
+/* small aesthetic adjustments */
+.card-title {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .banner-img {
+        height: auto;
+        width: 100%;
+    }
+}
