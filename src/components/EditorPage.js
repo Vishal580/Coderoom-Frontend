@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { compileCode } from "../services/api";
 import Avatar, { genConfig } from "react-nice-avatar";
 import "./components.css";
 
@@ -158,15 +159,12 @@ function EditorPage() {
   const runCode = async () => {
     setIsCompiling(true);
     try {
-      const response = await axios.post("http://localhost:5000/compile", {
-        code: codeRef.current,
-        language: selectedLanguage,
-      });
-      console.log("Backend response:", response.data);
-      setOutput(response.data.output || JSON.stringify(response.data));
+      const result = await compileCode(codeRef.current, selectedLanguage);
+      console.log("Backend response:", result);
+      setOutput(result.output || JSON.stringify(result));
     } catch (error) {
       console.error("Error compiling code:", error);
-      setOutput(error.response?.data?.error || "An error occurred");
+      setOutput(error.error || "An error occurred");
     } finally {
       setIsCompiling(false);
     }
@@ -181,12 +179,6 @@ function EditorPage() {
       <div className="row flex-grow-1">
         {/* Client panel */}
         <div className="col-md-2 text-light d-flex flex-column">
-          {/* <img
-            src="/images/codecast.png"
-            alt="Logo"
-            className="img-fluid mx-auto"
-            style={{ maxWidth: "150px", marginTop: "-43px" }}
-          /> */}
           <h3 className="colorful-text my-2">{"</> "}CODEROOM</h3>
           <hr style={{ marginTop: "0rem" }} />
 
