@@ -21,7 +21,3 @@ export const compileCode = async (code, language) => {
     throw error.response?.data || { error: "Failed to compile code" };
   }
 };
-
-
-
-
