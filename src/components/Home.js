@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import "./components.css";
+import "../styles/components.css";
 
 function Home() {
   const [roomId, setRoomId] = useState("");
